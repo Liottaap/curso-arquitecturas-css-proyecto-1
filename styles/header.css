@@ -1,8 +1,5 @@
-#nav-list li:last-child { /* QUITAR CUANDO AGREGAMOS EXTRAS */
-    display: none;
-} 
-
-.navbar {            /* general distribution */
+@media only screen and (max-width: 768px) {
+  .navbar {
     display: flex;
     background-color: var(--dark-jungle-green);
     align-items: center;
@@ -12,113 +9,104 @@
     height: 10rem;
     position: sticky;
     font-size: var(--medium);
-}
-.navbar__left {
+    padding: 50px;
+  }
+
+  .navbar__left {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px
-}
-.navbar__logo {
-    width: 70px;            /* Logo size */
+    gap: 20px;
+  }
+
+  .navbar__logo {
+    width: 70px;
     max-width: 30rem;
     height: 50%;
     object-fit: cover;
-}
+  }
 
-.navbar__right {
+  .navbar__right {
+    display: none;
+  }
+
+  .navbar__menu-icon {
     display: flex;
-    justify-content: center;
-}
-.navbar__menu-icon {                /* menu cursor efect */
     cursor: pointer;
-    width: 40px;
-}
+    width: 20%;
+    margin-right: 10px;
+  }
 
-.navbar__name {             /* size of name on header */
+  .navbar__name {
     font-size: var(--xlg);
-}
-.navbar__list {         /* option list styles */
-    height: 75vh;
-    width: 100vw;
-    position: absolute;
-    top: 0;
-    right: 0;
+  }
+
+  .navbar__list {
+    display: flex;
+    width: 100%;
     background-color: var(--dark-jungle-green);
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transform: translateY(-100%);           /* hide list */
-    transition: transform var(--normal-transition-time);
-}
+    gap: 20px;
+  }
 
-.nav-list--show {               /* show list */
-    transform: translateY(0%);
-    box-shadow: 0px 15px 10px -15px rgb(0, 0, 0);
-}
-
-.menu-icon-img--show {      /* change img colors when nav list is show up */
-    filter: invert(75%) sepia(47%) saturate(2805%) hue-rotate(168deg) brightness(87%) contrast(102%);
-}
-
-.navbar ul li a {   /* a base styles */
+  .navbar ul li a {
     text-decoration: none;
     color: white;
+  }
 }
 
-.navbar ul li
-, .navbar ul li a {
-    height: 100%;
+@media only screen and (min-width: 768px) {
+  .navbar {
+    display: flex;
+    background-color: var(--dark-jungle-green);
+    align-items: center;
+    justify-content: space-between;
+    color: white;
     width: 100%;
+    height: 10rem;
+    position: sticky;
+    font-size: var(--medium);
+    padding: 50px;
+  }
+  .navbar__left {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    gap: 20px;
+  }
+  .navbar__logo {
+    width: 70px;
+    max-width: 30rem;
+    height: 50%;
+    object-fit: cover;
+  }
+  .navbar__menu-icon {
+    display: none;
+  }
 
-.navbar ul li{
-    transition: var(--short-transition-time);
-    /* border-bottom: 0.4rem solid var(--blue-sapphire); */
-}
+  .navbar__list {
+    display: flex;
+    width: 100%;
+    background-color: var(--dark-jungle-green);
+    list-style: none;
+    gap: 20px;
+  } 
+  .navbar ul li a {
+    font-weight: lighter;
+    list-style: none;
+    text-decoration: none;
+    color: white;
+  }
 
-@media (any-hover: hover) {
-    .navbar ul li:hover {           /* hover for list options */
-        background-color: var(--blue-sapphire);
-    }
-}
-  
-@media only screen and (min-width: 768px) {
-    .navbar {            /* general distribution */
-        display: grid;
-        grid-template-columns: 1fr 1fr 3fr;
-        justify-items: unset;
-        top: 0;
-        box-shadow: 0px 10px 12px 0px var(--dark-jungle-green-transparency);
-    }
-
-    .navbar span {      /* img container styles */
-        display: none;
-    }
-
-    .navbar__list {         /* option list styles */
-        position: static;
-        height: 100%;
-        width: 100%;
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        transform: translateY(0%);
-    }
-
-    .navbar ul li a {   /* a base styles */
-        font-weight: lighter;
-    }
-
-    .nav-list--show {               /* show list */
-        transform: translateY(0%);
-        box-shadow: none;
-    }
+  .nav-list--show {
+    transform: translateY(0%);
+    box-shadow: none;
+  }
+  .navbar__name {
+    font-size: var(--xlg);
+  }
+  .navbar ul li a {
+    text-decoration: none;
+    color: white;
+  }
 }

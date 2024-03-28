@@ -1,6 +1,6 @@
-let menuIcon = document.getElementById("menu-icon")
-let menuList = document.getElementById("nav-list")
-let menuLink = document.getElementsByClassName("nav-link")
+let menuIcon = document.querySelector(".navbar__menu-icon");
+let menuList = document.getElementById("navbar__list")
+let menuLink = document.getElementsByClassName("navbar__link")
 let divHider = document.getElementById("nav-body-hider")
 
 function crearListeners( ){                 //Crear listeners para los elementos a escuchar
